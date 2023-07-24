@@ -83,7 +83,10 @@ nav a:hover {
     display: none;
 }
 
+
+
 @media (max-width: 952px) {
+
     label.logo {
         font-size: 30px;
         padding-left: 50px;
@@ -133,6 +136,7 @@ nav a:hover {
 
     #check:checked~ul {
         left: 0;
+        position: relative;
     }
 }
 
@@ -543,6 +547,12 @@ a.slide_btn {
 }
 
 @media (max-width: 576px) {
+
+    .fact-wrapper .fact-content,
+    .fact-wrapper .fact-counter {
+        padding-left: 0px !important;
+    }
+
     .fact-title {
         font-size: 32px;
         text-align: center;
