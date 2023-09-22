@@ -56,26 +56,27 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-input">
-                            <input type="text" placeholder="your name" required="">
+                            <input type="text" placeholder="your name" id="yourName" required="">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-input">
-                            <input type="text" placeholder="phone number" required="">
+                            <input type="text" placeholder="phone number" id="phoneNumber" required="">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-input">
-                            <input type="email" placeholder="email address" required="">
+                            <input type="email" placeholder="email address" id="emailAddress" required="">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-input">
-                            <textarea name="" id="" rows="6" placeholder="your message" spellcheck="false"></textarea>
+                            <textarea name="" id="bodyMessage" rows="6" placeholder="your message"
+                                spellcheck="false"></textarea>
                             <grammarly-extension data-grammarly-shadow-root="true"
                                 style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: auto;"
                                 class="dnXmp"></grammarly-extension>
@@ -87,7 +88,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <button class=" btn-primary">Send Now</button>
+                        <button class=" btn-primary" onclick="SendMail()">Send Now</button>
                     </div>
                 </div>
             </div>
@@ -165,6 +166,17 @@
             </div>
         </div>
     </footer>
+    <script>
+        function SendMail() {
+            var yourName = $("#yourName").val();
+            var phoneNumber = $("#phoneNumber").val();
+            var emailAddress = $("#emailAddress").val();
+            var bodyMessage = $("#bodyMessage").val();
+            var bodyText = "Full Name: " + yourName + ", Phone Number: " + phoneNumber
+                + ", email Address: " + emailAddress + ", Message :" + bodyMessage;
+            document.location = "mailto:bharataghara566@gmail.com,remoradaimould@remora.in?subject=Regarding Inquiry&body=" + encodeURIComponent(bodyText);
+        }
+    </script>
 </body>
 
 </html>
